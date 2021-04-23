@@ -1,0 +1,36 @@
+<h1>Bookings</h1>
+<table
+  class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp"
+>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric">Hotel ID</th>
+    <th class="mdl-data-table__cell--non-numeric">Booking Date</th>
+    <th class="mdl-data-table__cell--non-numeric">Start Date</th>
+    <th class="mdl-data-table__cell--non-numeric">End Date</th>
+    <th class="mdl-data-table__cell--non-numeric">User ID</th>
+  </tr>
+  <tr *ngFor="let booking of bookings">
+    <td class="mdl-data-table__cell--non-numeric">{{booking.hotel_id}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{booking.booking_date}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{booking.booking_start}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{booking.booking_end}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{booking.user_id}}</td>
+
+  </tr>
+</table>
+
+<div class="paging">
+  <button
+    class="mdl-button mdl-js-button mdl-button--colored"
+    (click)="prevPage()"
+  >
+    <i class="material-icons">arrow_back</i>
+  </button>
+  Page {{page+1}}
+  <button
+    class="mdl-button mdl-js-button mdl-button--colored"
+    (click)="nextPage()"
+  >
+    <i class="material-icons">arrow_forward</i>
+  </button>
+</div>

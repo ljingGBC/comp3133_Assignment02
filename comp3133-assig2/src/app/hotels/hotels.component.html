@@ -1,0 +1,35 @@
+<h1>Hotels</h1>
+<table
+  class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp"
+>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric">Hotel ID</th>
+    <th class="mdl-data-table__cell--non-numeric">Hotel Name</th>
+    <th class="mdl-data-table__cell--non-numeric">Price</th>
+    <th>Email</th>
+    <th class="mdl-data-table__cell--non-numeric">Address</th>
+  </tr>
+  <tr *ngFor="let Hotel of hotels">
+    <td class="mdl-data-table__cell--non-numeric">{{Hotel.hotel_id}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{Hotel.hotel_name}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{Hotel.hand}}</td>
+    <td>{{Hotel.email}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{Hotel.street}}, {{Hotel.city}}, {{Hotel.postal_code}}</td>
+  </tr>
+</table>
+
+<div class="paging">
+  <button
+    class="mdl-button mdl-js-button mdl-button--colored"
+    (click)="prevPage()"
+  >
+    <i class="material-icons">arrow_back</i>
+  </button>
+  Page {{page+1}}
+  <button
+    class="mdl-button mdl-js-button mdl-button--colored"
+    (click)="nextPage()"
+  >
+    <i class="material-icons">arrow_forward</i>
+  </button>
+</div>
