@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo, QueryRef } from 'apollo-angular';
 import gql from 'graphql-tag';
 
-
 const HOTELS_QUERY = gql`
   query hotels($offset: Int) {
     Hotel(offset: $offset, limit: 10) {
@@ -17,7 +16,6 @@ const HOTELS_QUERY = gql`
     }
   }
 `;
-
 
 @Component({
   selector: 'app-hotels',
@@ -40,13 +38,11 @@ export class HotelsComponent implements OnInit {
       variables: { offset: 10 * this.page }
     });
 
-
     this.query.valueChanges.subscribe(result => {
       this.hotels = result.data && result.data.hotels;
     });
 
   }
-
 
   update() {
     this.query.refetch({ offset: 10 * this.page });
